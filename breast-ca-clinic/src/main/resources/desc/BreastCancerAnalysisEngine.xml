@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="RegexAnnotator">
+      <import location="RegexAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TNMAnnotator">
+      <import location="TNMAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="GradeAnnotator">
+      <import location="GradeAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="StageAnnotator">
+      <import location="StageAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="ReceptorStatusAnnotator">
+      <import location="ReceptorStatusAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TestTypeAnnotator">
+      <import location="TestTypeAnnotator.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>Breast Cancer Analysis Engine</name>
+    <description>Combines the output of several annotators to extract breast cancer phenotypes</description>
+    <version>1.0.0.0</version>
+    <vendor>MAVERIC</vendor>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>RegexAnnotator</node>
+        <node>TNMAnnotator</node>
+        <node>GradeAnnotator</node>
+        <node>StageAnnotator</node>
+        <node>ReceptorStatusAnnotator</node>
+        <node>TestTypeAnnotator</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+			<type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.TNMDescriptor</type>
+			<type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.Grade</type>
+			<type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.Stage</type>
+			<type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.ReceptorStatus</type>
+			<type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.TestType</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>false</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

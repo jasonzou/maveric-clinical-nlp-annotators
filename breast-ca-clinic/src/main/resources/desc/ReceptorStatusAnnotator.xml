@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>gov.va.maveric.uima.breastca.ReceptorStatusAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>Hormone Receptor Status Annotator</name>
+    <description>Identifies hormone receptor status in the documents.</description>
+    <version>1.0.0.0</version>
+    <vendor>MAVERIC</vendor>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <typeSystemDescription>
+      <imports>
+        <import location="TypeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+        	<type allAnnotatorFeatures="true">gov.va.maveric.uima.regex.ConceptFeature</type>
+			<type allAnnotatorFeatures="true">gov.va.maveric.uima.regex.Concept</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.ReceptorStatus</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>false</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

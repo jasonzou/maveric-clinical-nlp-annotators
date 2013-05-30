@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>gov.va.maveric.uima.breastca.PRStatusDupeRemove</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>PR Status Dupe Removal Annotator</name>
+    <description>The annotator finds PR Status annotations that are contained in another and removes it from the indexes.</description>
+    <version>1.0.0</version>
+    <vendor>MAVERIC</vendor>
+    <configurationParameters />
+    <configurationParameterSettings />
+    <typeSystemDescription>
+      <imports>
+        <import location="TypeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.ProgesteroneReceptorStatus</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>false</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

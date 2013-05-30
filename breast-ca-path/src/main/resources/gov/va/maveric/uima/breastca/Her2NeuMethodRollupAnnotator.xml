@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>gov.va.maveric.uima.breastca.Her2NeuMethodRollupAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>Her2Neu Method Roll-up Annotator</name>
+    <description>The annotator creates a document level annotation from the extracted Her2Neu method.</description>
+    <version>1.0.0</version>
+    <vendor>MAVERIC</vendor>
+    <configurationParameters />
+    <configurationParameterSettings />
+    <typeSystemDescription>
+      <imports>
+        <import location="TypeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.Her2NeuDetectionMethod</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>false</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

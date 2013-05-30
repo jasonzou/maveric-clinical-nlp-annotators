@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>gov.va.maveric.uima.breastca.BreastCancerAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>Breast Cancer Annotator</name>
+    <description>The annotator that identifies breast cancer-specific indicators in the documents.</description>
+    <version>1.0.0</version>
+    <vendor>MAVERIC</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>rulesURL</name>
+        <description>List of regular expression definitions.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>rulesURL</name>
+        <value>
+          <string>rules.xml</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="TypeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.EstrogenReceptorStatus</type>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.Her2NeuDetectionMethod</type>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.Her2NeuValue</type>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.NodalStage</type>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.ProgesteroneReceptorStatus</type>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.TumorStage</type>
+          <type allAnnotatorFeatures="true">gov.va.maveric.uima.breastca.Grade</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>false</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
